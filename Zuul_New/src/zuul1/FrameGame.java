@@ -179,6 +179,7 @@ public class FrameGame extends javax.swing.JFrame {
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
         // TODO add your handling code here:
+         textArea.setText(oneGamePrint.helpMessage());
     }//GEN-LAST:event_btnHelpActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
