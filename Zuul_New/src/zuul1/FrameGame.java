@@ -14,8 +14,16 @@ public class FrameGame extends javax.swing.JFrame {
     /**
      * Creates new form FrameGame
      */
+    private GamePrint oneGamePrint; 
+    
+    
     public FrameGame() {
         initComponents();
+        // game = new Game();
+        //jTextArea1.setText(game.printWelcome());
+        oneGamePrint = new GamePrint(); 
+        textArea.setText(oneGamePrint.WelcomeMessage());
+        
     }
 
     /**
@@ -36,7 +44,7 @@ public class FrameGame extends javax.swing.JFrame {
         btnHelp = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textArea = new javax.swing.JTextArea();
 
         jButton3.setText("jButton3");
 
@@ -82,10 +90,15 @@ public class FrameGame extends javax.swing.JFrame {
 
         btnExit.setBackground(new java.awt.Color(255, 102, 102));
         btnExit.setText("Exit game");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        textArea.setColumns(20);
+        textArea.setRows(5);
+        jScrollPane1.setViewportView(textArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,6 +181,11 @@ public class FrameGame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHelpActionPerformed
 
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -213,6 +231,6 @@ public class FrameGame extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea textArea;
     // End of variables declaration//GEN-END:variables
 }
