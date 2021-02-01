@@ -14,16 +14,12 @@ public class GamePrint
       System.out.println(m);  
     return m;
 }
-    
-    
-  public String helpMessage()  {
-        String help = "You are lost. You are alone. You wander" + "\n";
-        help += "around at the university." + "\n";
-        help += "\n";
-        help += "Your command words are:" +  "\n";
-        help += parser.showCommands();
-        System.out.println(help);
-        return help;
+  public String helpMessage()
+  {
+      String m = "you're lost?\n" +
+"the commands you can write are help, go and exit";
+        System.out.println(m);
+        return m;
     }
 
    
