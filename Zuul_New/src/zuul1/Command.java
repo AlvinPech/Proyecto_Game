@@ -46,7 +46,7 @@ public class Command
     
     //reyes
     public boolean validateUnknownCommands (){
-        if(aCommandWord == CommandWord.xx){
+        if(aCommandWord == CommandWord.STRANGEWORD){
             return true;
         }else{
             return false;

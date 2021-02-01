@@ -21,7 +21,7 @@ public class FrameGame extends javax.swing.JFrame {
         initComponents();
        
         oneGamePrint = new GamePrint(); 
-        textArea.setText(oneGamePrint.WelcomeMessage());
+        textArea.setText(oneGamePrint.welcomeMessage());
         
     }
 
