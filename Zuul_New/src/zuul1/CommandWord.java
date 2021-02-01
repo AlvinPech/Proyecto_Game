@@ -9,6 +9,24 @@ package zuul1;
  *
  * @author Usuario
  */
-public class CommandWord {
+public enum CommandWord {
+    
+    GO("go"),HELP("help"), STRANGEWORD("?"),EXIT("exit");
+    
+    private String textCommand; 
+
+     CommandWord(String textCommand) {
+        this.textCommand = textCommand;
+    }
+
+    @Override
+    public String toString() 
+    {
+        return textCommand ;
+    }
+    
+    
+    
+    
     
 }
