@@ -1,9 +1,6 @@
 package zuul1;
 
 import static zuul1.Game.startingRoom;
-
-package zuul1;
-
 import static zuul1.Game.startingRoom;
 
 public class GameStructure {
