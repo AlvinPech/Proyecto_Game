@@ -3,7 +3,15 @@ package zuul1;
 
 public class Game 
 {
-   static Parser parser;
+    static Parser parser;
+    static Room startingRoom;
+    GameStructure gameStructure= new GameStructure();  
+    GamePrint gamePrint= new GamePrint();
+
+    public Game() {
+        gameStructure.createRooms();
+        parser = new Parser();
+    }
     
     
     
@@ -15,7 +23,7 @@ public class Game
        
        while(!goOut)
        {
-           Command cmd = parser.xxxxx(); 
+           Command cmd = parser.getCommand(); 
            if(executeCommand(cmd).equals("exit")){
                goOut = true;
            }
@@ -38,7 +46,7 @@ public class Game
         }
         
         if(cmdWord== CommandWord.GO){
-           xxxx.xxx(cmd);
+           gameStructure.goRoom(cmd);
         }
         if(cmdWord== CommandWord.EXIT){
             String msg = exit(cmd);
@@ -64,7 +72,9 @@ public class Game
     
     //
     
-    
+    public String go(String direction) {
+        return gameStructure.goRoom(new Command(CommandWord.GO, direction));        
+    }
     
     
     

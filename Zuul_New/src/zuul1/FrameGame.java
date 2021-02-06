@@ -15,11 +15,13 @@ public class FrameGame extends javax.swing.JFrame {
      * Creates new form FrameGame
      */
     private GamePrint oneGamePrint; 
-    
+    GameStructure gameStructure= new GameStructure();  
+    GamePrint gamePrint= new GamePrint();
+    private Game game;
     
     public FrameGame() {
         initComponents();
-       
+        game = new Game();
         oneGamePrint = new GamePrint(); 
         textArea.setText(oneGamePrint.welcomeMessage());
         
@@ -35,7 +37,7 @@ public class FrameGame extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton3 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        label1 = new java.awt.Label();
         btnEast = new javax.swing.JButton();
         btnNorth = new javax.swing.JButton();
         btnWest = new javax.swing.JButton();
@@ -44,13 +46,14 @@ public class FrameGame extends javax.swing.JFrame {
         btnExit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         textArea = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
 
         jButton3.setText("jButton3");
 
+        label1.setText("label1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 102, 255));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img1.png"))); // NOI18N
 
         btnEast.setBackground(new java.awt.Color(255, 255, 153));
         btnEast.setText("East");
@@ -99,65 +102,63 @@ public class FrameGame extends javax.swing.JFrame {
         textArea.setRows(5);
         jScrollPane1.setViewportView(textArea);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img1.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnHelp)
+                        .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(124, 124, 124)
-                                .addComponent(btnWest))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btnHelp)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
+                                .addGap(81, 81, 81)
                                 .addComponent(btnSouth)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
                                 .addComponent(btnExit))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnNorth)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(btnNorth))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
+                                        .addComponent(btnWest)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnEast)))
+                                        .addComponent(jLabel1)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnEast)
                                 .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1)))
+                    .addComponent(jScrollPane1))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnNorth)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnEast)
-                                .addGap(27, 27, 27))))
+                        .addGap(131, 131, 131)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnHelp)
+                            .addComponent(btnExit)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(btnWest)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSouth)
-                    .addComponent(btnHelp)
-                    .addComponent(btnExit))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(btnNorth)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnEast, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnWest, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(36, 36, 36)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSouth)))
                 .addContainerGap())
         );
 
@@ -176,6 +177,7 @@ public class FrameGame extends javax.swing.JFrame {
 
     private void btnWestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWestActionPerformed
         // TODO add your handling code here:
+        textArea.setText(game.go("south"));
     }//GEN-LAST:event_btnWestActionPerformed
 
     private void btnNorthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNorthActionPerformed
@@ -231,6 +233,7 @@ public class FrameGame extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private java.awt.Label label1;
     private javax.swing.JTextArea textArea;
     // End of variables declaration//GEN-END:variables
 }
