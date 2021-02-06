@@ -42,7 +42,7 @@ public class Command
         }else{
             return false;
         }
-       }
+    }
     
     //reyes
     public boolean validateUnknownCommands (){
