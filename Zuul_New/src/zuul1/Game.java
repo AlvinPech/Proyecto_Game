@@ -3,27 +3,33 @@ package zuul1;
 
 public class Game 
 {
-   static Parser parser;
+    public static Parser parser;
+    static Room startingRoom;
+    GameStructure gameStructure= new GameStructure();  
+    GamePrint gamePrint= new GamePrint();
+
+    public Game() {
+        gameStructure.createRooms();
+        parser = new Parser();
+    }
     
     
     
     public void startGame()
     {
-       GamePrint gamePrint = new GamePrint();
+       //GamePrint gamePrint = new GamePrint();
        gamePrint.welcomeMessage(); 
        boolean goOut=false; 
        
        while(!goOut)
        {
-           Command cmd = parser.xxxxx(); 
+           Command cmd = parser.getUserCommand(); 
            if(executeCommand(cmd).equals("exit")){
-               goOut = true;
+               goOut = true;  
            }
-           String  msg="see you later and come back soon" ; 
-           System.out.println(msg);
-       }
-        
-        
+       }  
+       String  msg="see you later and come back soon" ; 
+       System.out.println(msg);
     }
     
     
@@ -38,14 +44,16 @@ public class Game
         }
         
         if(cmdWord== CommandWord.GO){
-           xxxx.xxx(cmd);
+           gameStructure.goRoom(cmd);
         }
         if(cmdWord== CommandWord.EXIT){
             String msg = exit(cmd);
+            return msg;
         }
         
         if(cmdWord== CommandWord.STRANGEWORD){
              String msg = "the command is not valid"; 
+             System.out.println(msg);
              return msg;
         }
         
@@ -64,7 +72,9 @@ public class Game
     
     //
     
-    
+    public String go(String direction) {
+        return gameStructure.goRoom(new Command(CommandWord.GO, direction));        
+    }
     
     
     

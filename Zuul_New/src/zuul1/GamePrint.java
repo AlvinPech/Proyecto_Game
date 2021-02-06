@@ -1,5 +1,9 @@
 
 package zuul1;
+
+import static zuul1.Game.parser;
+import static zuul1.Game.startingRoom;
+
 /**
  *
  * @author Rodrigo Plaza
