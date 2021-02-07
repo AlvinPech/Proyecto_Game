@@ -20,7 +20,12 @@ public class Parser {
         System.out.print("\n:");
         Scanner commandWord = new Scanner(inputWord.nextLine());
 
-        inputWordsList = getWordsList(commandWord); //We need to get the list of words that user input
+        if(commandWord.hasNext()) {
+            inputWordsList[0] = commandWord.next();
+            if(commandWord.hasNext()) {
+                inputWordsList[1] = commandWord.next();
+            }
+        }
 
         if(inputWordsList[0] != "") {
             word1 = inputWordsList[0];
@@ -30,17 +35,6 @@ public class Parser {
         }
         objCommand = new Command(objCommandWords.getCommandWord(word1), word2);
         return objCommand;
-    }
-
-    public String[] getWordsList(Scanner commandWord){
-        String[] splitWords = {"",""};
-        if(commandWord.hasNext()) {
-            splitWords[0] = commandWord.next();
-            if(commandWord.hasNext()) {
-                splitWords[1] = commandWord.next();
-            }
-        }
-        return splitWords;
     }
     
     public String showCommands() {
