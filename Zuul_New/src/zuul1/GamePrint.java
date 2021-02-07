@@ -1,60 +1,31 @@
-
 package zuul1;
 
 import static zuul1.Game.parser;
 import static zuul1.Game.startingRoom;
 
-/**
- *
- * @author Rodrigo Plaza
-
-
+/*
+ * @author  Michael Kolling and David J. Barnes
+ * @version 2008.03.30
 */
 
-
-
-
-
-
 public class GamePrint {
-    
-    
- public String welcomeMessage(){
+       
+    public String welcomeMessage(){
      
-        String m = "Welcome to Zuul!"+"\n"+"Are you ready to have fun?\n" +
-"If you need help you can press the button on the top left" + CommandWord.HELP + "' if you need help." + "\n" 
+        String message = "Welcome to Zuul!"+"\n"+"Are you ready to have fun?\n" 
+        + "If you need help you can press the button on the top left" 
+        + CommandWord.HELP + "' if you need help." + "\n" 
         + "\n" + startingRoom.getLongDescription();
-        System.out.print(m);
-        return m;    
+        System.out.print(message);
+        return message;    
     }
  
     public String helpMessage() {
-     String m = "you're lost?\n" +
-"the commands you can write are help, go and exit" +  "\n"
-       + parser.showCommands();
-       System.out.println(m);
-       return m;
+        
+        String message = "you're lost?\n" 
+        +"the commands you can write are help, go and exit" +  "\n"
+        + parser.showCommands();
+        System.out.println(message);
+        return message;
     }
 }
-/*
-public class GamePrint 
-
-{
- 
-    public String WelcomeMessage(){
-    String m = "Welcome to Zuul!"+"\n"+"Are you ready to have fun?\n" +
-"If you need help you can press the button on the top left";
-      System.out.println(m);  
-    return m;
-}
-  public String helpMessage()
-  {
-      String m = "you're lost?\n" +
-"the commands you can write are help, go and exit";
-        System.out.println(m);
-        return m;
-    }*/
-
-   
-
-
