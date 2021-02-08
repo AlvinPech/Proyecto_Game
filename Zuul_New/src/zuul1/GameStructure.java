@@ -34,7 +34,8 @@ public class GameStructure {
        
         String room = "";
         
-        if(!command.validateSecondaryWord()){
+        boolean validateSecundaryWord = command.validateSecondaryWord();     
+        if(validateSecundaryWord==true){
             room = "Go where?";
             System.out.println(room);
             return room;

@@ -41,8 +41,7 @@ public class Room {
     }
 
     public Room getRoomExit(String direction){
-        Room roomExit;
-        roomExit=exits.get(direction);
+        Room roomExit= exits.get(direction);
         return roomExit;
     }
 }
