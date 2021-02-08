@@ -27,7 +27,7 @@ public class Game{
        System.out.println(exitMessage);
     }
     
-    public String executeCommand(Command command){
+    private String executeCommand(Command command){
      
         CommandWord cmdWord = command.getaCommandWord(); 
         String exitMessage = "";
@@ -49,7 +49,7 @@ public class Game{
            return exitMessage;
     }  
     
-    public String validateExit(Command command){
+    private String validateExit(Command command){
         String exitMessage = "exit"; 
         if( command.validateSecondaryWord() ){
             exitMessage = "want to go out?";
