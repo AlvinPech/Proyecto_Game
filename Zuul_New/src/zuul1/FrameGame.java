@@ -11,18 +11,14 @@ package zuul1;
  */
 public class FrameGame extends javax.swing.JFrame {
 
-    
-    private GamePrint oneGamePrint; 
-    GameStructure gameStructure= new GameStructure();  
-    GamePrint gamePrint= new GamePrint();
-    private Game game;
+    private GamePrint oneGamePrint;
+    private Game objGame;
     
     public FrameGame() {
         initComponents();
-        game = new Game();
+        objGame = new Game();
         oneGamePrint = new GamePrint(); 
         textArea.setText(oneGamePrint.welcomeMessage());
-        
     }
 
     /**
@@ -181,22 +177,22 @@ public class FrameGame extends javax.swing.JFrame {
     private void btnWestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWestActionPerformed
         // TODO add your handling code here:
         
-        textArea.setText(game.go("west"));
+        textArea.setText(objGame.go("west"));
     }//GEN-LAST:event_btnWestActionPerformed
 
     private void btnNorthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNorthActionPerformed
         // TODO add your handling code here:
-        textArea.setText(game.go("north"));
+        textArea.setText(objGame.go("north"));
     }//GEN-LAST:event_btnNorthActionPerformed
 
     private void btnEastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEastActionPerformed
         // TODO add your handling code here:
-        textArea.setText(game.go("east"));
+        textArea.setText(objGame.go("east"));
     }//GEN-LAST:event_btnEastActionPerformed
 
     private void btnSouthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSouthActionPerformed
         // TODO add your handling code here:
-        textArea.setText(game.go("south"));
+        textArea.setText(objGame.go("south"));
     }//GEN-LAST:event_btnSouthActionPerformed
 
     /**

@@ -1,51 +1,44 @@
 package zuul1;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 
-public class Parser 
-{
-    private CommandWords commands; 
-    private Command comm;
-    private Scanner word = new Scanner(System.in);
-    private ArrayList<String> list = new ArrayList<String>();
-    public Parser() 
-    {
-        commands = new CommandWords();
-        
+public class Parser {
+    private final CommandWords objCommandWords;
+    private Command objCommand;
+    private final Scanner inputWord = new Scanner(System.in);
+
+    public Parser() {
+        objCommandWords = new CommandWords();
     }
-
    
-    public Command getUserCommand() 
-    {
-        String inputLine;  
+    public Command getUserCommand() {
         String word1 = null;
         String word2 = null;
+        String[] inputWordsList = {"",""};
 
-        System.out.print("\n:");     
+        System.out.print("\n:");
+        Scanner commandWord = new Scanner(inputWord.nextLine());
 
-        
-        Scanner commandWord = new Scanner(word.nextLine());
-        
-        while(commandWord.hasNext()){
-            list.add(commandWord.next());
-        }
-        
-        if(list.get(0) != null){
-            word1 = list.get(0);
-            if(list.get(1) != null){
-                word2 = list.get(1);
+        if(commandWord.hasNext()) {
+            inputWordsList[0] = commandWord.next();
+            if(commandWord.hasNext()) {
+                inputWordsList[1] = commandWord.next();
             }
         }
-        
-        comm = new Command(commands.getCommandWord(word1), word2);
-        return comm;
+
+        if(inputWordsList[0] != "") {
+            word1 = inputWordsList[0];
+            if(inputWordsList[1] != "") {
+                word2 = inputWordsList[1];
+            }
+        }
+        objCommand = new Command(objCommandWords.getCommandWord(word1), word2);
+        return objCommand;
     }
     
-    public String showCommands()
-    {
-        return commands.showAll();
+    public String showCommands() {
+        return objCommandWords.showAllCommands();
     }
     
 }
