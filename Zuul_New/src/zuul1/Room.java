@@ -4,11 +4,6 @@ import java.util.Set;
 import java.util.HashMap;
 import java.util.Iterator;
 
-/*
- * @author  Michael Kolling and David J. Barnes
- * @version 2008.03.30
-*/
-
 public class Room {
         
     private String description;
@@ -31,8 +26,9 @@ public class Room {
     }
     
     public String getLongDescription(){
-        
-        return "You are " + description + ".\n" + getExitString();
+        String longDescription;
+        longDescription= "You are " + description + ".\n" + getExitString();
+        return longDescription;
     }
 
     private String getExitString(){
@@ -44,7 +40,9 @@ public class Room {
         return returnString;
     }
 
-    public Room getExit(String direction){
-        return exits.get(direction);
+    public Room getRoomExit(String direction){
+        Room roomExit;
+        roomExit=exits.get(direction);
+        return roomExit;
     }
 }
