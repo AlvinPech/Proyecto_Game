@@ -35,14 +35,13 @@ public class Game{
              GamePrint gamePrint = new GamePrint();
              gamePrint.helpMessage(); 
         }
-        if(cmdWord== CommandWord.GO){
+        if(cmdWord == CommandWord.GO){
            gameStructure.goRoom(command);
         }
         if(cmdWord == CommandWord.EXIT){
             String exitMessage = validateExit(command);
             return exitMessage;
         }
-        
         if(cmdWord == CommandWord.STRANGEWORD){
              String warningMessage = "the command is not valid"; 
              System.out.println(warningMessage);
