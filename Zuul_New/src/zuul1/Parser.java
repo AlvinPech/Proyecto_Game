@@ -36,13 +36,17 @@ public class Parser {
         String[] splitWords = {"",""};
         if(commandWord.hasNext()) {
             splitWords[0] = commandWord.next();
-            if(commandWord.hasNext()) {
-                splitWords[1] = commandWord.next();
-            }
+            getSecondWord(commandWord, splitWords);
         }
         return splitWords;
     }
-    
+
+    private void getSecondWord(Scanner commandWord, String[] splitWords) {
+        if(commandWord.hasNext()) {
+            splitWords[1] = commandWord.next();
+        }
+    }
+
     public String showCommands() {
         return objCommandWords.showAllCommands();
     }
