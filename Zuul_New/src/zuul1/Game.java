@@ -30,24 +30,23 @@ public class Game{
     public String executeCommand(Command command){
      
         CommandWord cmdWord = command.getaCommandWord(); 
+        String exitMessage = "";
         
+        if(cmdWord == CommandWord.STRANGEWORD){
+             exitMessage = "the command is not valid"; 
+             System.out.println(exitMessage);
+             return exitMessage;
+        }
         if(cmdWord == CommandWord.HELP){
-             GamePrint gamePrint = new GamePrint();
              gamePrint.helpMessage(); 
         }
         if(cmdWord == CommandWord.GO){
            gameStructure.goRoom(command);
         }
         if(cmdWord == CommandWord.EXIT){
-            String exitMessage = validateExit(command);
-            return exitMessage;
+            exitMessage = validateExit(command); 
         }
-        if(cmdWord == CommandWord.STRANGEWORD){
-             String warningMessage = "the command is not valid"; 
-             System.out.println(warningMessage);
-             return warningMessage;
-        }
-           return "";
+           return exitMessage;
     }  
     
     public String validateExit(Command command){
