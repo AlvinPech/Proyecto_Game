@@ -27,20 +27,12 @@ public class Command
         this.secondaryWord = secondaryWord;
     }
     
-    public boolean validateSecondaryWord (){
-        if(secondaryWord != null){
-            return true; 
-        }else{
-            return false;
-        }
+   public boolean validateSecondaryWord (){
+        return(secondaryWord != null);
     }
     
     public boolean validateUnknownCommands (){
-        if(aCommandWord == CommandWord.STRANGEWORD){
-            return true;
-        }else{
-            return false;
-        }
+        return(aCommandWord == CommandWord.STRANGEWORD);
     }
 }
 
