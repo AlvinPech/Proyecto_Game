@@ -28,8 +28,7 @@ public class Parser {
                 word2 = inputWordsList[1];
             }
         }
-        objCommand = new Command(objCommandWords.getCommandWord(word1), word2);
-        return objCommand;
+        return new Command(objCommandWords.getCommandWord(word1), word2);
     }
 
     public String[] getWordsList(Scanner commandWord){
