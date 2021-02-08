@@ -6,37 +6,28 @@ public class Command
     private CommandWord aCommandWord; 
     private String secondaryWord; 
 
-    
-    
-    // método constructor
-    public Command(CommandWord aCommandWord, String secondaryWord) 
-    {
+    public Command(CommandWord aCommandWord, String secondaryWord){
         this.aCommandWord = aCommandWord;
         this.secondaryWord = secondaryWord;
     }
-    
-    //
-
-    public CommandWord getaCommandWord() 
-    {
+   
+    public CommandWord getaCommandWord(){
         return aCommandWord;
     }
-    public void setaCommandWord(CommandWord aCommandWord)
-    {
+    
+    public void setaCommandWord(CommandWord aCommandWord){
         this.aCommandWord = aCommandWord;
     }
-    public String getSecondaryWord() 
-    {
+    
+    public String getSecondaryWord(){
         return secondaryWord;
     }
-    public void setSecondaryWord(String secondaryWord) 
-    {
+    
+    public void setSecondaryWord(String secondaryWord){
         this.secondaryWord = secondaryWord;
     }
     
-    
-    public boolean validateSecondaryWord ()
-    {
+    public boolean validateSecondaryWord (){
         if(secondaryWord != null){
             return true; 
         }else{
@@ -44,7 +35,6 @@ public class Command
         }
     }
     
-    //reyes
     public boolean validateUnknownCommands (){
         if(aCommandWord == CommandWord.STRANGEWORD){
             return true;
@@ -52,9 +42,6 @@ public class Command
             return false;
         }
     }
-    
-    
-    
-    
 }
+
 
