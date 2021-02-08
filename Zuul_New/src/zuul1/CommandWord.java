@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package zuul1;
 
-/**
- *
- * @author Usuario
+/*
+ * @author lizandro reyes
  */
 public enum CommandWord {
     
@@ -15,18 +10,12 @@ public enum CommandWord {
     
     private String textCommand; 
 
-     CommandWord(String textCommand) {
+     CommandWord(String textCommand){
         this.textCommand = textCommand;
     }
 
-    @Override
-    public String toString() 
-    {
+    public String toString(){
         return textCommand ;
     }
-    
-    
-    
-    
-    
+
 }
