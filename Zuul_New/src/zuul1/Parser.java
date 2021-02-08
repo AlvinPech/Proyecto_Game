@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class Parser {
     private final CommandWords objCommandWords;
-    private Command objCommand;
     private final Scanner inputWord = new Scanner(System.in);
 
     public Parser() {
