@@ -1,12 +1,6 @@
 package zuul1;
 
 import static zuul1.Game.startingRoom;
-import static zuul1.Game.startingRoom;
-
-/*
- * @author  Michael Kolling and David J. Barnes
- * @version 2008.03.30
-*/
 
 public class GameStructure {
     
@@ -40,7 +34,7 @@ public class GameStructure {
        
         String room = "";
         
-        if(!command.validateSecondaryWord()){
+         if(!command.validateSecondaryWord()) {
             room = "Go where?";
             System.out.println(room);
             return room;
@@ -48,7 +42,7 @@ public class GameStructure {
 
         String direction = command.getSecondaryWord();
 
-        Room nextRoom = startingRoom.getExit(direction);
+        Room nextRoom = startingRoom.getRoomExit(direction);
 
         if (nextRoom == null) {
             room = "There is no door!";
